@@ -1,0 +1,48 @@
+<div class="container p-4">
+    <div class="row justify-content-center">
+        <h1>Actualizar profesor</h1>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+            <form method="POST" action="/profesores/actualizar/{{profesor.idprofesor}}">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" value="{{profesor.nombre}}"
+                        required />
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" class="form-control" name="apellido" id="apellido" value="{{profesor.apellido}}"
+                        required />
+                </div>
+                <div class="form-group">
+                    <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento"
+                        value="{{profesor.fecha_nacimiento}}" required />
+                </div>
+                <div class="form-group">
+                    <label for="profesion">Profesión</label>
+                    <input type="text" class="form-control" name="profesion" id="profesion"
+                        value="{{profesor.profesion}}" required />
+                </div>
+                <div class="form-group">
+                    <label for="genero">Género</label>
+                    <select class="form-control" name="genero" id="genero" required>
+                        <option value="M" {{#eq profesor.genero "M" }}selected{{/eq}}>Masculino
+                        </option>
+                        <option value="F" {{#eq profesor.genero "F" }}selected{{/eq}}>Femenino
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" value="{{profesor.email}}"
+                        required />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-block">Actualizar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

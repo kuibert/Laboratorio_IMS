@@ -1,0 +1,47 @@
+<div class="container p-4">
+    <div class="row justify-content-center">
+        <h1>Agregar profesor</h1>
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+            <form method="POST" action="/profesores/agregar">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" required />
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido" required />
+                </div>
+                <div class="form-group">
+                    <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento" required />
+                </div>
+                <div class="form-group">
+                    <label for="profesion">Profesión</label>
+                    <input type="text" class="form-control" name="profesion" id="profesion" placeholder="Profesión" required />
+                </div>
+                <div class="form-group">
+                    <label for="genero">Género</label>
+                    <select class="form-control" name="genero" id="genero" required>
+                        <option value="" disabled selected>Seleccione un género</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" required />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-block">Guardar</button>
+                </div>
+            </form>
+            {{#if mensaje}}
+            <div class="alert alert-info mt-3">
+                {{mensaje}}
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</div>
